@@ -17,12 +17,12 @@ function BloodPressureGraph({username}) {
 			.then(data => {
 				for (let i = 0; i < data.length; i++) {
 					if (Object.hasOwn(data[i],'sysPressure') && data[i].username === username) {
-						systolicPressures.push(data[i].sysPressure)
-						diabolicPressures.push(data[i].diaPressure)
-						const dateObject = new Date(data[i].date)
+						systolicPressures.push(data[i].sysPressure);
+						diabolicPressures.push(data[i].diaPressure);
+						const dateObject = new Date(data[i].date);
 						const options = {  month: 'short', day: 'numeric', hour: 'numeric', minute:'numeric'};
 						const formattedDate = dateObject.toLocaleString('en-Us', options);
-						bpDates.push(formattedDate)
+						bpDates.push(formattedDate);
 					}
 				}
 				const chartData = {
