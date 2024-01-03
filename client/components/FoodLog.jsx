@@ -44,7 +44,7 @@ function FoodLog(props) {
       });
 
       const data = await response.json();
-      console.log(data);
+      console.log('data in foodLog post: ', data);
       console.log('Data Posted!');
       navigate('/homepage')
     } catch (error) {

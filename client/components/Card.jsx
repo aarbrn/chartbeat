@@ -2,7 +2,7 @@ import React from 'react'
 
 function Card({item, id, handleClick}) {
 
-  const itemClass = item.state ? 'active' + item.state: ''
+  const itemClass = item.state ? 'active' + item.state : ''
 
   return (
 
