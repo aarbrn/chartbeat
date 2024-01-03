@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const PORT = 3000;
 
-const MONGO_URI = 'mongodb+srv://tawniex44:3vd5DPgTjLU819sO@cluster0.7z5ioep.mongodb.net/?retryWrites=true&w=majority'
+const MONGO_URI = 'mongodb+srv://tanman1811:feZKKXYNZECDcl85@cluster0.109d8vh.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
