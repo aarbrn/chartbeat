@@ -11,18 +11,31 @@ import Modal from './Modal'
 
 function Homepage() {
   
+  //check if a user is logged in without decoding the username
   function getCookie(name) {
+    //document.cookie returns a single string that includes all cookies in a specific format
+    //split('; ') converts this string into an array of individual cookie strings, where each element is a separate cookie
     const cookies = document.cookie.split('; ');
+    //iterate through cookies
     for (const cookie of cookies) {
+      //destructuring where split('=') operation returns an array w two elements: 
+      //the part before '=' (which is the cookie name) and the part after '=' (which is the cookie value).
       const [cookieName, cookieValue] = cookie.split('=');
+      //retrieves value of cookie username (w/e username input is)
       if (cookieName === name) {
         return cookieValue;
       }
     }
+    //otherwise return null
     return null;
   }
   const usernameCookie = getCookie('username')
+<<<<<<< HEAD
+  //should return cookieValue
   console.log(usernameCookie)
+=======
+  console.log('username cookie: ', usernameCookie)
+>>>>>>> dev
   const cards = [];
   // for (let i = 0; i < 3; i++) {
   //   cards.push(<InfoCard key={crypto.randomUUID()}/>);
@@ -30,13 +43,16 @@ function Homepage() {
   const [buttonPopup, setButtonPopup] = useState(false);
   const [ data, setData ] = useState([]);
 
+  //use useEffect hook to fetch data from specified endpoint
+  //if date is fetched from an API or some external source, use useEffect to trigger the fetch operation and update the state when the data is available
+  //If date is derived from client-side and doesn't involve async operations, might not need useEffect unless there's requirements for when date should be updated
   useEffect(() => {
     fetch('http://localhost:3000/api/homepage/bloodsugar')
     .then(response => response.json())
     .then(data => {
       const array = []
       data.forEach(el => { 
-      
+        //if username, grab date and push it into array
         if(el.username === usernameCookie){
           const dateObject = new Date(el.date);
           const options = { weekday: 'short', month: 'numeric', day: 'numeric', hour: 'numeric', minute:'numeric' };
@@ -53,7 +69,12 @@ function Homepage() {
         }
       
       })
+<<<<<<< HEAD
       console.log(array)
+      //state is updated with current data (line 40)
+=======
+      console.log('data array in homepage fetch: ', array)
+>>>>>>> dev
       setData(array)
     })
     .catch(error => console.log('Error displaying entries on homepage'))
@@ -65,19 +86,22 @@ function Homepage() {
   //   navigate('/foodlog');
   // };
 
+  //use the decoded username for authentication
   function getCookie(cookieName) {
     const cookies = document.cookie.split('; ');
   
     for (const cookie of cookies) {
       const [name, value] = cookie.split('=');
       if (name === cookieName) {
+        // decodeURIComponent takes a URI component that has been encoded and decodes it
+        //If the name of the cookie matches the provided cookieName (in this case, 'username'), the value is decoded using decodeURIComponent before being returned.
         return decodeURIComponent(value);
       }
     }
   
     return null;
   }
-
+ //deletes BS/BP entries
   const handleDelete = (id) => {
     fetch(`http://localhost:3000/api/delete/${id}`, {
       method: 'DELETE',
@@ -89,7 +113,7 @@ function Homepage() {
     .catch(err => console.log(err))
   }
 
-  //update pop up modal:
+  //update pop up model:
   const [ open, setOpen ] = useState(false);
   const [ itemId, setItemId ] = useState(null)
   const [ formData, setFormData ] = useState({
@@ -140,7 +164,7 @@ function Homepage() {
 
   return (
     <div>
-      <h1>VEKTOR</h1>
+      <h1>CHARTBEAT</h1>
       <div>
         <Navbar />
       </div>
