@@ -5,61 +5,61 @@ const User = require('../models/userModel');
 const controller = {};
 
 controller.createUser = async (req, res, next) => {
-    const { username, password } = req.body
-    if (!username || !password) {
-        return next({
-            log: 'Error in createUser middleware',
-            status: 400,
-            error: 'Error in creating user, please follow rules for username and password'
-        })
-    }
-    try {
-        const newUser = await User.create({
-            username: username,
-            password: password,
-        })
-        console.log('got the newUser')
-        res.locals.newUser = newUser._id;
-        return next();
-    } catch (error) { return next({
-        log: 'Error in createUser middleware',
-            status: 500,
-            error: 'Error in creating user'
-        })
-    }
+  const { username, password } = req.body
+  if (!username || !password) {
+    return next({
+      log: 'Error in createUser middleware',
+      status: 400,
+      error: 'Error in creating user, please follow rules for username and password'
+    })
+  }
+  try {
+    const newUser = await User.create({
+      username: username,
+      password: password,
+    })
+    console.log('got the newUser')
+    res.locals.newUser = newUser._id;
+    return next();
+  } catch (error) { return next({
+    log: 'Error in createUser middleware',
+    status: 500,
+    error: 'Error in creating user'
+  })
+  }
 }
 
 controller.verifyUser = async (req, res, next) => {
-    const { username, password } = req.body
-    try {
-        const userConfirmed = await User.findOne({ username, password })
-        if (userConfirmed) {
-            res.locals.id = userConfirmed._id;
-            return next();
-        }
-    } catch (error) {
-        return next({
-            log: 'Error in getUser middleware',
-            status: 500,
-            error: 'Error in getting user'
-        })
+  const { username, password } = req.body
+  try {
+    const userConfirmed = await User.findOne({ username, password })
+    if (userConfirmed) {
+      res.locals.id = userConfirmed._id;
+      return next();
     }
+  } catch (error) {
+    return next({
+      log: 'Error in getUser middleware',
+      status: 500,
+      error: 'Error in getting user'
+    })
+  }
 }
 
 controller.getInfo = async (req,res,next) => {
-    try{
-        const data = await Info.find({})
-        if (data) {
-            res.locals.data = data;
-            return next();
-        }
-    } catch (error) {
-        return next({
-            log: 'Error in getSugar middleware',
-            status: 500,
-            error: 'Error in retreiving sugar levels'
-        })
+  try{
+    const data = await Info.find({})
+    if (data) {
+      res.locals.data = data;
+      return next();
     }
+  } catch (error) {
+    return next({
+      log: 'Error in getSugar middleware',
+      status: 500,
+      error: 'Error in retreiving sugar levels'
+    })
+  }
 }
 // controller.startSession = async (req, res, next) => {
 //     if (res.locals.id == undefined) {
@@ -92,56 +92,57 @@ controller.getInfo = async (req,res,next) => {
 
 
 controller.createEntry = async (req, res, next) => {
-    const { username, bloodSugar, sysPressure, diaPressure } = req.body
-    try {
-        const newEntry = await Info.create({
-            username,
-            bloodSugar,
-            sysPressure,
-            diaPressure,
-        })
-        console.log('created entry')
-        res.locals.entry = newEntry._id;
-        return next();
-    } catch (error) { return next({
-        log: 'Error in createEntry middleware',
-            status: 500,
-            error: 'Error in creating entry'
-        })
-    }
+  const { username, bloodSugar, sysPressure, diaPressure } = req.body
+  try {
+    const newEntry = await Info.create({
+      username,
+      bloodSugar,
+      sysPressure,
+      diaPressure,
+    })
+    // console.log('newentry received in createentry: ', newEntry)
+    console.log('created entry')
+    res.locals.entry = newEntry._id;
+    return next();
+  } catch (error) { return next({
+    log: 'Error in createEntry middleware',
+    status: 500,
+    error: 'Error in creating entry'
+  })
+  }
 
 }
 
 controller.deleteEntry = async (req, res, next) => {
-    const { id } = req.params;
-    console.log(req.params)
-    try {
-        await Info.findOneAndDelete({_id:id})
-        return next();
-    }
-    catch(error){
-        return next({
-            log: 'Error in deleteEntry middleware',
-            status: 500,
-            error: 'Error in deleting entry'
-        })
-    }
+  const { id } = req.params;
+  console.log(req.params)
+  try {
+    await Info.findOneAndDelete({_id:id})
+    return next();
+  }
+  catch(error){
+    return next({
+      log: 'Error in deleteEntry middleware',
+      status: 500,
+      error: 'Error in deleting entry'
+    })
+  }
 }
 
 //Not done yet, for the updateEntry
 controller.updateEntry = async (req, res, next) => {
-    const { bloodSugar, sysPressure, diaPressure, id } = req.body;
-    try {
-        await Info.updateOne({_id:id},{bloodSugar, sysPressure, diaPressure})
-        return next();
-    }
-    catch(error) {
-        return next({
-            log: 'Error in updateEntry middleware',
-            status: 500,
-            error: 'Error in updating entry'
-        })
-    }
+  const { bloodSugar, sysPressure, diaPressure, id } = req.body;
+  try {
+    await Info.updateOne({_id:id},{bloodSugar, sysPressure, diaPressure})
+    return next();
+  }
+  catch(error) {
+    return next({
+      log: 'Error in updateEntry middleware',
+      status: 500,
+      error: 'Error in updating entry'
+    })
+  }
 }
 
 module.exports = controller;

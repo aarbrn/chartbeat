@@ -4,7 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "jest",
+=======
+    "test": "jest --detectOpenHandles",
+>>>>>>> dev
     "start": "npm run dev",
     "dev": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "webpack serve --mode development",
