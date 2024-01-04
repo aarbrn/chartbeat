@@ -100,6 +100,7 @@ controller.createEntry = async (req, res, next) => {
       sysPressure,
       diaPressure,
     })
+    // console.log('newentry received in createentry: ', newEntry)
     console.log('created entry')
     res.locals.entry = newEntry._id;
     return next();

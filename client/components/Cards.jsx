@@ -22,13 +22,13 @@ function Cards() {
         {id: 8, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQp16jfrdh8Eesd9gLxXVspjHRlXyh6eZzQ&usqp=CAU', state: ''},
     ].sort(() => Math.random()-0.5))
 
-    const [ prev, setPrev ] = useState(-1)
+    const [ prev, setprev ] = useState(-1)
     
     function check(current) {
         if (items[current].id == items[prev].id) {
             items[current].state = 'correct';
             items[prev].state = 'correct';
-            setPrev(-1)
+            setprev(-1)
         }
         else {
             items[current].state = 'wrong';
@@ -38,7 +38,7 @@ function Cards() {
                 items[current].state = ''
                 items[prev].state=''
                 setItems([...items])
-                setPrev(-1)
+                setprev(-1)
             },10)
         }
     }
@@ -47,7 +47,7 @@ function Cards() {
         if(prev==-1){
             items[id].state = 'active';
             setItems([...items]);
-            setPrev(id)
+            setprev(id)
         }
         else {
             check(id)
@@ -64,6 +64,6 @@ function Cards() {
         </div>
     </div>
   )
-};
+}
 
-export default Cards;
+export default Cards

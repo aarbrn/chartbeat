@@ -20,9 +20,9 @@ function Homepage() {
       }
     }
     return null;
-  };
-  const usernameCookie = getCookie('username');
-  console.log('username cookie in homepage: ', usernameCookie);
+  }
+  const usernameCookie = getCookie('username')
+  console.log('username cookie: ', usernameCookie)
   const cards = [];
   // for (let i = 0; i < 3; i++) {
   //   cards.push(<InfoCard key={crypto.randomUUID()}/>);
@@ -34,15 +34,15 @@ function Homepage() {
     fetch('http://localhost:3000/api/homepage/bloodsugar')
     .then(response => response.json())
     .then(data => {
-      const array = [];
+      const array = []
       data.forEach(el => { 
       
         if(el.username === usernameCookie){
           const dateObject = new Date(el.date);
           const options = { weekday: 'short', month: 'numeric', day: 'numeric', hour: 'numeric', minute:'numeric' };
           const formattedDate = dateObject.toLocaleString('en-US', options);
-          el.date = formattedDate;
-          array.push(el);
+          el.date = formattedDate
+          array.push(el)
           // const formattedData = data.map(item => {
             // const dateObject = new Date(item.date);
             // const options = { weekday: 'short', month: 'numeric', day: 'numeric' };
@@ -53,7 +53,7 @@ function Homepage() {
         }
       
       })
-      console.log('bs array in homepage: ', array)
+      console.log('data array in homepage fetch: ', array)
       setData(array)
     })
     .catch(error => console.log('Error displaying entries on homepage'))
@@ -100,8 +100,6 @@ function Homepage() {
 
   const handleOpen = (theId) => {
     setOpen(true);
-    console.log('theId: ', theId);
-    console.log('opening');
     setItemId(theId)
   };
 
