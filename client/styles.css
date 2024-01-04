@@ -8,8 +8,10 @@
 } */
 h1 {
   text-align: center;
-  font-family:'Courier New', Courier, monospace;
-  font-size: 50px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #36454F; 
 }
  
 .loginPageContainer {
@@ -166,7 +168,8 @@ body {
   height: 24em;
   width: 20em;
   border-radius: 1em;
-  border-color: #c5a789
+  border-color: #c5a789;
+  color: #36454F;
 }
 
 .entries {
@@ -180,6 +183,7 @@ body {
   padding: 32px;
   width: 100%;
   max-width: 640px;
+  color: #36454F;
 }
 
 .cardContainer {
@@ -268,10 +272,6 @@ body {
   height: 2em;
   width: 6em;
   margin: 2em;
-}
-
-.graphs {
-  display: flex;
 }
 
 .navBarContainer {
@@ -396,10 +396,16 @@ body {
   background-color: #ccd5ae;
   border-radius: 10px;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid #36454F;
   width: 20rem;
   margin: 10px;
   box-shadow: 5px 5px 5px #3a5a40;
+  color: #081b28;
+  font-family: 'Libre Baskerville', serif;
+}
+
+p {
+    font-family: 'Libre Baskerville', serif;
 }
 
 .oneGame {

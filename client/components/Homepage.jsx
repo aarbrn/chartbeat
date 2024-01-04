@@ -140,7 +140,7 @@ function Homepage() {
 
   return (
     <div>
-      <h1>VEKTOR</h1>
+      <h1>chartbeat</h1>
       <div>
         <Navbar />
       </div>
