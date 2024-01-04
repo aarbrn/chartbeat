@@ -22,7 +22,7 @@ function Homepage() {
     return null;
   }
   const usernameCookie = getCookie('username')
-  console.log(usernameCookie)
+  console.log('username cookie: ', usernameCookie)
   const cards = [];
   // for (let i = 0; i < 3; i++) {
   //   cards.push(<InfoCard key={crypto.randomUUID()}/>);
@@ -53,7 +53,7 @@ function Homepage() {
         }
       
       })
-      console.log(array)
+      console.log('data array in homepage fetch: ', array)
       setData(array)
     })
     .catch(error => console.log('Error displaying entries on homepage'))
