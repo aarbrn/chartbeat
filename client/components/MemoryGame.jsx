@@ -8,6 +8,7 @@ function MemoryGame() {
       <Navbar />
       <div className='gameContainer'>
         <h1 className='gameName'>Memory Game</h1>
+        {/* render memory game thru cards component */}
         <Cards />
       </div>
     </div>

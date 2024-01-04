@@ -5,24 +5,29 @@ import { useCookies } from 'react-cookie';
 
 
 function Login() {
+    //declare state var to login
     const [ loginData, setLogin ] = useState({
         username:'',
         password:'',
     });
 
     const [ cookies, setCookies ] = useCookies(["username"]);
-
+    //event handler that sets cookie to username & value loginData.username
     const handleCookies = () => {
         setCookies('username', loginData.username, {path: '/', secure: true})
     }
 
+    //useNavigate is a react hook that's used to navigate to specified paths (lines 45, 48)
     const navigate = useNavigate();
     const handleChange = (e) => {
+        //prevents entire page from reloading upon form submission
         e.preventDefault();
         const { name, value } = e.target;
+        //changes the local state of name (includes username and password on lines 63, 69) in response to user input
+        //use spread operator since name = username, password 
         setLogin({...loginData, [name]:value})
     }
-
+    //event handler that that changes state upon form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         // check what route for get request for login
@@ -35,8 +40,11 @@ function Login() {
             body:
                 JSON.stringify(loginData)
         })
+        //ok = property on response object that indicates whether the HTTP response status is within the range of 200-299
         if (loginInfo.ok) {
             handleCookies()
+            //renders Homepage component + loads /homepage endpoint bc of line 15 on App.jsx
+            //we set up a corresponding Route for '/homepage' in App.jsx where we defined routes
             navigate('/homepage')
         }
         else {
@@ -74,7 +82,7 @@ function Login() {
                 </div>
             </div>
             <div >
-                <h3 id="overlay">Vektor</h3>
+                <h3 id="overlay">Charbeat</h3>
                 <img className='loginImg' src="https://pics.craiyon.com/2023-06-26/5c43832150134eb99cdee5fde6ffa06b.webp" alt="" />
             </div>
         </div>
