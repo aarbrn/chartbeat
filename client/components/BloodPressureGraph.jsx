@@ -43,7 +43,7 @@ function BloodPressureGraph({username}) {
 
 
   return (
-    <div style={{ width: 700 }}>
+    <div class="bpGraph">
       <Line data={userData}/>
     </div>
   )
