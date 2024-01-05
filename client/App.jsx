@@ -10,7 +10,6 @@ import MemoryGame from './components/MemoryGame';
 function App() {
   return (
     //routes to access separate components 
-    <Router>
     <Routes>
       <Route exact path='/' element={<Login />} />
       <Route exact path='/homepage' element={<Homepage />} />
@@ -19,13 +18,7 @@ function App() {
       <Route exact path='/games' element={<Games />}/>
       <Route exact path='/memoryGame' element={<MemoryGame />} />
     </Routes>
-    </Router>
   );
 }
 
 export default App;  
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> dev
