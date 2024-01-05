@@ -2,7 +2,7 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 import { useState, useEffect } from 'react';
 import { Chart as ChartJS} from 'chart.js/auto';
-import { LinePlot } from '@mui/x-charts/LineChart';
+
 
 function LineGraph({username}) {
 

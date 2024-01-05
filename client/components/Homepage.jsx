@@ -31,10 +31,7 @@ function Homepage() {
   }
   const usernameCookie = getCookie('username')
   //should return cookieValue
-<<<<<<< HEAD
   console.log(usernameCookie)
-=======
->>>>>>> 7c6dde5b1fc164ff797e037f7a5cecdf0e0c5fee
   console.log('username cookie: ', usernameCookie)
   const cards = [];
   // for (let i = 0; i < 3; i++) {
@@ -69,17 +66,12 @@ function Homepage() {
         }
       
       })
-<<<<<<< HEAD
 
       console.log(array)
       //state is updated with current data (line 40)
 
       console.log('data array in homepage fetch: ', array)
 
-=======
-      //state is updated with current data (line 40)
-      console.log('data array in homepage fetch: ', array)
->>>>>>> 7c6dde5b1fc164ff797e037f7a5cecdf0e0c5fee
       setData(array)
     })
     .catch(error => console.log('Error displaying entries on homepage'))
