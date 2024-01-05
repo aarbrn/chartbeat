@@ -42,7 +42,9 @@ function SignUp() {
         <div>
             <div className='signUpPageContainer'>
                 <div className='signUpCard'>
-                    <h2 className='signUpTitle'>Create an Account</h2>
+                <h1 class="animate__animated animate__heartBeat animate__infinite">chartbeat</h1>
+                    <h2 className='signUpTitle'>make an account</h2>
+                    <h3 className='signuph3' class='animate__hinge animate__infinite animate__faster' style={{fontWeight: 500}}> right down here</h3>
                     <form method='post' className='signUpForm' onSubmit={handleSubmit}>
                         <div >
                             <input className='signUpInput' type='text' name='firstName' placeholder='First Name' onChange={handleChange}></input>

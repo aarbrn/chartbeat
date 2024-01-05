@@ -16,7 +16,7 @@ let newEntryId;
 let newEntry;
 let resData;
 
-// test create entry
+// test create, get, delete entry
 
 describe('db entries', () => {
     it('posts a new entry to the db', async () => {

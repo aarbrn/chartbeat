@@ -1,7 +1,8 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import { useState, useEffect } from 'react';
-import { Chart as ChartJS} from 'chart.js/auto'
+import { Chart as ChartJS} from 'chart.js/auto';
+import { LinePlot } from '@mui/x-charts/LineChart';
 
 function LineGraph({username}) {
 
@@ -36,13 +37,18 @@ function LineGraph({username}) {
             }
           ]
         }
+        // const chartData = {
+          
+        // }
         setData(chartData)
       })
     })
     
   return (
-    <div style={{ width: 700 }}>
+    // <div class="sugGraph" style={{width: 700, height: 600}} >
+    <div class="sugGraph">
       <Line data={userData} />
+      {/* <LinePlot data={userData}/>  */}
     </div>
   )
 }

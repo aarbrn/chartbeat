@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie';
 
-
 function Login() {
     //declare state var to login
     const [ loginData, setLogin ] = useState({
@@ -57,9 +56,10 @@ function Login() {
         
     return(
         <div className='loginPageContainer'>
-            <div className='loginContainer'>
+
                 <div className='loginCard'>
-                    <h2 className='loginTitle'>Login</h2>
+                    <h1 class="animate__animated animate__heartBeat animate__infinite">chartbeat</h1>
+                    <h5 class="animate__rollIn animate__infinite animate__animated animate__faster">log in right here</h5>
                     <form className='loginInputForm' onSubmit={handleSubmit}>
                         <div className='loginLabelDiv'>
                             <label >Username: </label>
@@ -75,16 +75,12 @@ function Login() {
                             value = {loginData.password}></input>
                         </div>
                         <div className='loginBtn'>
-                            <button type='submit'><strong>Sign in</strong></button>
+                            <button type='submit'><p>Sign in</p></button>
                         </div>
                         <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
                     </form>
                 </div>
-            </div>
-            <div >
-                <h3 id="overlay">Charbeat</h3>
-                <img className='loginImg' src="https://pics.craiyon.com/2023-06-26/5c43832150134eb99cdee5fde6ffa06b.webp" alt="" />
-            </div>
+
         </div>
     )
 }

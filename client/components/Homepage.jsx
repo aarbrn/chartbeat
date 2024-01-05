@@ -6,8 +6,8 @@ import BloodPressureGraph from './BloodPressureGraph'
 import Navbar from './Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
-import Modal from './Modal'
-
+import Modal from './Modal';
+// import 'animate.css';
 
 function Homepage() {
   
@@ -31,7 +31,10 @@ function Homepage() {
   }
   const usernameCookie = getCookie('username')
   //should return cookieValue
+<<<<<<< HEAD
   console.log(usernameCookie)
+=======
+>>>>>>> 7c6dde5b1fc164ff797e037f7a5cecdf0e0c5fee
   console.log('username cookie: ', usernameCookie)
   const cards = [];
   // for (let i = 0; i < 3; i++) {
@@ -66,12 +69,17 @@ function Homepage() {
         }
       
       })
+<<<<<<< HEAD
 
       console.log(array)
       //state is updated with current data (line 40)
 
       console.log('data array in homepage fetch: ', array)
 
+=======
+      //state is updated with current data (line 40)
+      console.log('data array in homepage fetch: ', array)
+>>>>>>> 7c6dde5b1fc164ff797e037f7a5cecdf0e0c5fee
       setData(array)
     })
     .catch(error => console.log('Error displaying entries on homepage'))
@@ -161,7 +169,7 @@ function Homepage() {
 
   return (
     <div>
-      <h1>CHARTBEAT</h1>
+      <h1 class="animate__animated animate__heartBeat animate__infinite">chartbeat</h1>
       <div>
         <Navbar />
       </div>
@@ -203,6 +211,10 @@ function Homepage() {
                 </div>
               </Modal>
       </div>
+      <div class='goodbye'>
+      <h3 class='animate__animated animate__jello animate__infinite' style={{fontWeight: 500}}>thanks for charting in!</h3>
+      <br/>
+    </div>
     </div>
   );
 }
