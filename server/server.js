@@ -8,6 +8,10 @@ const cookieParser = require('cookie-parser');
 const PORT = 3000;
 
 const MONGO_URI = 'mongodb+srv://tanman1811:feZKKXYNZECDcl85@cluster0.109d8vh.mongodb.net/?retryWrites=true&w=majority'
+<<<<<<< HEAD
+
+=======
+>>>>>>> dev
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -23,12 +27,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 
-// app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../client/index.html')));
 app.use('/api', router);
-
-// app.get('/', (res,req) => {
-//     return res.sendFile(path.join(__dirname, '../client/index.html'));
-// });
 
 app.use('*', (req,res) => {
   res.status(404).send('Not Found');
@@ -44,6 +43,7 @@ app.use((err, req, res, next) => {
   console.log(errorObj.log);
   return res.status(errorObj.status).json(errorObj.message);
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...`);
