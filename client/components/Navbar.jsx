@@ -6,10 +6,10 @@ function Navbar() {
     <nav>
       <div className='navBarContainer'>
         <ul className='navBarList'>
-          <li className='navigationLinks'><Link to="/homepage" style={{textDecoration:'none', color:'white'}}><strong>Home</strong></Link></li>
-          <li className='navigationLinks'><Link to="/about" style={{textDecoration:'none', color:'white'}}><strong>About</strong></Link></li>
-          <li className='navigationLinks'><Link to="/contact" style={{textDecoration:'none', color:'white'}}><strong>Contact</strong></Link></li>
-          <li className='navigationLinks'><Link to="/games" style={{textDecoration:'none', color:'white'}}><strong>Games</strong></Link></li>
+          <li className='navigationLinks'><Link to="/homepage" style={{textDecoration:'none', color:'white'}}><p>Home</p></Link></li>
+          <li className='navigationLinks'><Link to="/about" style={{textDecoration:'none', color:'white'}}><p>About</p></Link></li>
+          <li className='navigationLinks'><Link to="/contact" style={{textDecoration:'none', color:'white'}}><p>Contact</p></Link></li>
+          <li className='navigationLinks'><Link to="/games" style={{textDecoration:'none', color:'white'}}><p>Games</p></Link></li>
         </ul>
       </div>
     </nav>

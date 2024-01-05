@@ -56,8 +56,8 @@ function BloodPressureGraph({username}) {
 
   //renders a line chart based on the data above using Chart.js
   return (
-    <div style={{ width: 700 }}>
-      <Line data={userData} />
+    <div class="bpGraph">
+      <Line data={userData}/>
     </div>
   );
 }

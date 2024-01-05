@@ -6,8 +6,8 @@ import BloodPressureGraph from './BloodPressureGraph'
 import Navbar from './Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
-import Modal from './Modal'
-
+import Modal from './Modal';
+// import 'animate.css';
 
 function Homepage() {
   
@@ -30,6 +30,7 @@ function Homepage() {
     return null;
   }
   const usernameCookie = getCookie('username')
+  //should return cookieValue
   console.log('username cookie: ', usernameCookie)
   const cards = [];
   // for (let i = 0; i < 3; i++) {
@@ -64,6 +65,7 @@ function Homepage() {
         }
       
       })
+      //state is updated with current data (line 40)
       console.log('data array in homepage fetch: ', array)
       setData(array)
     })
@@ -154,7 +156,7 @@ function Homepage() {
 
   return (
     <div>
-      <h1>CHARTBEAT</h1>
+      <h1 class="animate__animated animate__heartBeat animate__infinite">chartbeat</h1>
       <div>
         <Navbar />
       </div>
@@ -196,6 +198,10 @@ function Homepage() {
                 </div>
               </Modal>
       </div>
+      <div class='goodbye'>
+      <h3 class='animate__animated animate__jello animate__infinite' style={{fontWeight: 500}}>thanks for charting in!</h3>
+      <br/>
+    </div>
     </div>
   );
 }
