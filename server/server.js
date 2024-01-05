@@ -8,10 +8,6 @@ const cookieParser = require('cookie-parser');
 const PORT = 3000;
 
 const MONGO_URI = 'mongodb+srv://tanman1811:feZKKXYNZECDcl85@cluster0.109d8vh.mongodb.net/?retryWrites=true&w=majority'
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,

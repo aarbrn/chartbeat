@@ -9,23 +9,18 @@ import MemoryGame from './components/MemoryGame';
 
 function App() {
   return (
-    //routes to access separate components 
-    <Router>
-    <Routes>
-      <Route exact path='/' element={<Login />} />
-      <Route exact path='/homepage' element={<Homepage />} />
-      <Route exact path='/signup' element={<SignUp />} />
-      <Route exact path='/foodlog' element={<FoodLog />} />
-      <Route exact path='/games' element={<Games />}/>
-      <Route exact path='/memoryGame' element={<MemoryGame />} />
-    </Routes>
-    </Router>
+    //routes to access separate components
+   
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+        <Route exact path="/homepage" element={<Homepage />} />
+        <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/foodlog" element={<FoodLog />} />
+        <Route exact path="/games" element={<Games />} />
+        <Route exact path="/memoryGame" element={<MemoryGame />} />
+      </Routes>
   );
 }
 
 export default App;  
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> dev
